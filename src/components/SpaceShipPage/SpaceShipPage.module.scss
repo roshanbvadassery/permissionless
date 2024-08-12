@@ -1,0 +1,193 @@
+@import "/styles/variables.scss";
+
+.container {
+  display: flex;
+  background: #a9ff1c;
+  background-size: contain;
+  @include devices(mobile) {
+    display: block;
+  }
+
+  .leftWrap {
+    padding: 0 0 0 7.5rem;
+    width: 50%;
+    @include devices(mobile) {
+      padding: 0 2rem;
+      width: unset;
+    }
+
+    .logoWrapper {
+      padding: 3.0625rem 0 2.9rem;
+    }
+    .tagline {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-family: "Krona One", sans-serif;
+      font-weight: 400;
+      font-size: 4.5rem;
+      line-height: 70px;
+      color: #000000;
+
+      &::before {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        background: url("/images/bg-circle.png") no-repeat;
+        background-size: contain;
+        width: 504px;
+        height: 504px;
+        top: 65px;
+        bottom: 0;
+        left: -280px;
+        @include devices(mobile) {
+          width: 404px;
+        }
+      }
+      &::after {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        background: url("/images/bg-circle.png") no-repeat;
+        background-size: contain;
+        width: 404px;
+        height: 404px;
+        top: 336px;
+        bottom: 0;
+        right: -540px;
+        transform: rotate(180deg);
+        @include devices(mobile) {
+          top: 242px;
+          right: -420px;
+        }
+      }
+      @include devices(mobile) {
+        font-size: 2.5rem;
+        line-height: 40px;
+      }
+    }
+    .iconRow {
+      display: flex;
+      justify-content: space-between;
+      padding: 3.5rem 0 2.125rem;
+      @include devices(mobile) {
+        padding: 2rem 0 1rem;
+      }
+      .plusIcon {
+        // animation: rotating 5s linear infinite;
+      }
+    }
+    // @keyframes rotating {
+    //   from {
+    //     transform: rotateX(0deg);
+    //   }
+    //   to {
+    //     transform: rotateX(360deg);
+    //   }
+    // }
+    .xIcon {
+      animation: rotating 2s linear infinite;
+    }
+    @keyframes rotating {
+      from {
+        transform: rotatey(360deg);
+      }
+      to {
+        transform: rotatey(0deg);
+      }
+    }
+    .desc {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 19px;
+      color: #000000;
+      @include devices(mobile) {
+        font-size: 0.8rem;
+      }
+    }
+    .desc2 {
+      padding-top: 0.42rem;
+    }
+    .list {
+      padding: 2.125rem 0 1rem;
+      border-bottom: solid 2px rgba(0, 0, 0, 0.2);
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          font-family: "Krona One", sans-serif;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 25px;
+          color: #000000;
+        }
+        .lightText {
+          opacity: 0.2;
+        }
+      }
+    }
+    .about {
+      padding: 0 0 15rem;
+      @include devices(mobile) {
+        padding: 0;
+      }
+      .question {
+        margin: 2.125rem 0 0;
+        font-family: "Work Sans", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+      }
+      .answer {
+        margin: 0.5rem 0 0;
+        padding: 0 0 2.125rem;
+        border-bottom: solid 2px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  .rightWrap {
+    width: 50%;
+    position: relative;
+    z-index: 2;
+    @include devices(mobile) {
+      width: unset;
+      padding: 3rem 2rem 3rem;
+      margin-left: -2rem;
+    }
+
+    .joinNowBtn {
+      position: absolute;
+      right: 0;
+      z-index: 5;
+      width: 100%;
+      max-width: 300px;
+      background: #a9ff1c;
+      margin: -6rem 1rem 0;
+      border-radius: 70px;
+      @include devices(mobile) {
+        max-width: 150px;
+        margin: -3rem 2.5rem 0;
+      }
+      p {
+        margin: 0;
+        font-family: "Work Sans";
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 1.5rem;
+        @include devices(mobile) {
+          padding: 0.5rem;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@import "/styles/variables.scss";
+
+.container {
+  padding-top: 5rem;
+  @include devices(mobile) {
+    padding-top: 0;
+  }
+
+  .team {
+    display: flex;
+    @include devices(mobile) {
+      flex-direction: column;
+    }
+    .thumnailWrapper {
+      flex: 0 0 60%;
+      max-width: 60%;
+      @include devices(mobile) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    .titleWrapper {
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+      $animationDelay: 1;
+      @include devices(mobile) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      > .title {
+        overflow: hidden;
+        display: block;
+        font-family: $font-heading;
+        font-style: italic;
+        font-size: 5rem;
+        letter-spacing: -0.3rem;
+        font-size: 8.9vw;
+        line-height: 0.7;
+        padding-right: 1rem;
+        position: relative;
+        margin: 6px 0;
+        padding-top: 1rem;
+        font-weight: 700;
+        overflow: hidden;
+        white-space: nowrap;
+        @include devices(mobile) {
+          font-size: 23.5vw;
+          margin-left: -1rem;
+          padding-right: 0;
+          letter-spacing: -0.2rem;
+        }
+        @for $i from 2 through 4 {
+          &:nth-of-type(#{$i}) {
+            &,
+            &:after {
+              animation-delay: #{$animationDelay}s;
+            }
+          }
+          $animationDelay: $animationDelay + 0.05;
+        }
+      }
+    }
+  }
+  .intro {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    width: 91%;
+    @include devices(mobile) {
+      flex-direction: column;
+      margin-top: 1rem;
+      width: unset;
+    }
+    > span {
+      flex: none;
+      @include devices(mobile) {
+        margin-bottom: 1.7rem;
+      }
+    }
+  }
+  .details {
+    margin-top: 3rem;
+    @include devices(mobile) {
+      margin-top: 0;
+    }
+    p {
+      font-size: 1rem;
+    }
+    .quote {
+      font-weight: 100;
+      font-size: 2rem;
+      font-style: italic;
+      display: block;
+      @include devices(mobile) {
+        line-height: 1.5;
+        margin-top: 2.5rem;
+      }
+    }
+  }
+}

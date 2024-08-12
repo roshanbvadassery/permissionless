@@ -1,0 +1,76 @@
+@import '/styles/variables.scss';
+
+.container {
+	position: relative;
+	margin-top: 7rem;
+	padding-top: 5rem;
+	@include devices(mobile) {
+		padding-bottom: 2rem;
+	}
+	.titleWrapper {
+		position: relative;
+		z-index: 2;
+		.title {
+			width: 100%;
+		}
+		.info {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 3rem;
+			@include devices(mobile) {
+				margin-top: 20rem;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			.address {
+				max-width: 300px;
+			}
+			a {
+				text-decoration: none;
+				color: #fff;
+				font-size: 2rem;
+				font-weight: 100;
+				display: inline-block;
+				@include devices(mobile) {
+					margin-top: 3rem;
+				}
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	.thumbnailWrapper {
+		position: relative;
+		text-align: center;
+		z-index: 0;
+		position: absolute;
+		right: 0;
+		left: 0;
+		top: 0%;
+		@include devices(mobile) {
+			top: -2rem;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 450px;
+			height: 100%;
+			top: -10%;
+			margin: 0 auto;
+			background-image: url('/images/layout/bg-lines-2.svg');
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			z-index: -1;
+			@include devices(mobile) {
+				width: 90%;
+				opacity: 0.6;
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "Gruntfuggly.todo-tree",
+    "rvest.vs-code-prettier-eslint",
+    "dbaeumer.vscode-eslint",
+    "kamikillerto.vscode-colorize",
+    "dsznajder.es7-react-js-snippets"
+  ]
+}

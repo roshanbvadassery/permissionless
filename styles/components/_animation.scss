@@ -1,0 +1,67 @@
+[data-aos="who-we-are"][class*="aos-animate"] {
+  .titleWrapper {
+    .title {
+      animation-name: textRevealer;
+      &:after {
+        animation-name: blockRevealer;
+      }
+    }
+  }
+}
+.blockRevealer {
+  position: relative;
+  clip-path: inset(0 100% 0 0);
+
+  &,
+  &::after {
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-iteration-count: var(--iterations, 1);
+    animation-duration: 800ms;
+    animation-duration: var(--duration, 800ms);
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $primary;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    pointer-events: none;
+  }
+}
+
+@keyframes textRevealer {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes blockRevealer {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}

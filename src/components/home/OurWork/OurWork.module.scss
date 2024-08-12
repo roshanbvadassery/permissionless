@@ -1,0 +1,283 @@
+@import "/styles/variables.scss";
+
+@mixin ourWorkCardEffect {
+  background-color: $primary;
+  &::before {
+    mix-blend-mode: exclusion;
+  }
+  .name {
+    mix-blend-mode: exclusion;
+    transform: scale(1.4);
+  }
+  .imageWrapper {
+    transform: scale(0.9);
+  }
+  .description,
+  .knowMore {
+    opacity: 1;
+  }
+  .description {
+    color: #ffffff;
+    mix-blend-mode: exclusion;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
+  margin-top: 7rem;
+  padding-top: 8rem;
+
+  @include devices(mobile) {
+    margin-top: 3rem;
+    padding-top: 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10vw;
+    width: 40vw;
+    height: 40vw;
+    background-image: url("/images/layout/our-work-bg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    transform: rotate(5deg);
+    @include devices(mobile) {
+      width: 70vw;
+      height: 90vw;
+    }
+  }
+  .title {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    @include devices(mobile) {
+      position: relative;
+    }
+  }
+  .house {
+    height: 38vw;
+    background-image: url("/images/layout/house.jpg");
+    background-position: left center;
+    background-size: cover;
+
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 0;
+    // transition: background-image 0.3s ease;
+    @include devices(mobile) {
+      height: 70vh;
+      margin-top: -3rem;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+      .content,
+      .location {
+        mix-blend-mode: exclusion;
+      }
+      p,
+      .location {
+        opacity: 1;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-image: url("/images/layout/house-colored.jpg");
+      background-size: cover;
+      background-position: left center;
+      opacity: 0;
+      transition: opacity 0.2s ease-in;
+      @include devices(mobile) {
+        opacity: 1;
+        background-position: 54% 100%;
+      }
+    }
+    &:hover {
+    }
+    .content {
+      @include devices(mobile) {
+        mix-blend-mode: exclusion;
+      }
+    }
+    .heading {
+      font-size: 3rem;
+      font-weight: 300;
+      @include devices(mobile) {
+        font-size: 2.8rem;
+      }
+    }
+    p {
+      font-size: 1.7rem;
+      @include devices(mobile) {
+        font-size: 1.3rem;
+      }
+    }
+    .location {
+      font-size: 0.9rem;
+    }
+    p,
+    .location {
+      opacity: 0;
+      transition: opacity 0.2s ease-in;
+      @include devices(mobile) {
+        opacity: 1;
+        mix-blend-mode: exclusion;
+      }
+    }
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+    padding-top: 1rem;
+    @include devices(mobile) {
+      flex-direction: column;
+      padding-top: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .item {
+      flex: 0 0 50%;
+      max-width: 50%;
+      height: 35vw;
+      padding: 1rem;
+      @include devices(mobile) {
+        flex: unset;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 1.5rem;
+        height: 190vw;
+        max-height: 490px;
+      }
+
+      .product {
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(169, 255, 28, 0.2);
+        backdrop-filter: blur(15px);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+        transition: background-color 0.3s ease-in;
+        overflow: hidden;
+        &:hover {
+          @include ourWorkCardEffect();
+        }
+        @include devices(mobile) {
+          background-color: $primary;
+          padding: 0;
+          justify-content: flex-end;
+          border: 0;
+
+          &::before {
+            mix-blend-mode: exclusion;
+          }
+          .name {
+            mix-blend-mode: exclusion;
+            transform: scale(1.3);
+          }
+          .imageWrapper {
+            margin-right: -1rem;
+            transform: scale(1) !important;
+            width: 85% !important;
+          }
+          .description,
+          .knowMore {
+            opacity: 1 !important;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          height: 3rem;
+          height: 100%;
+          background-image: url("/images/layout/product-bg.svg");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          z-index: -1;
+          @include devices(mobile) {
+            background-size: 145% 100%;
+          }
+        }
+        .name {
+          font-size: 3rem;
+          font-weight: 300;
+          position: absolute;
+          left: 1.5rem;
+          top: 1.5rem;
+          transition: transform 0.3s ease-in;
+          transform-origin: left;
+          z-index: 3;
+          @include devices(mobile) {
+            font-size: 1.5rem;
+          }
+        }
+        .description {
+          position: absolute;
+          left: 2rem;
+          // top: 45%;
+          bottom: 20%;
+          width: 40%;
+          z-index: 2;
+          font-size: 1.1rem;
+          mix-blend-mode: exclusion;
+          opacity: 0;
+          @include devices(mobile) {
+            width: 70%;
+            font-size: 1.3rem;
+            // top: 40%;
+          }
+        }
+        .imageWrapper {
+          width: 80%;
+          transition: transform 0.3s ease-in;
+          transform: scale(0.6);
+        }
+        .knowMore {
+          position: absolute;
+          left: 2rem;
+          bottom: 0.7rem;
+          mix-blend-mode: exclusion;
+          font-size: 1.1rem;
+          color: #fff;
+          text-decoration: none !important;
+          opacity: 0;
+        }
+        .desc {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 19px;
+          mix-blend-mode: exclusion;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

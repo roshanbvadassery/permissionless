@@ -1,0 +1,98 @@
+@import "/styles/variables.scss";
+
+.container {
+  background-image: url(/images/layout/hero-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8rem;
+  height: 1004.2px;
+  @media screen and (max-width: $mobileResolution) {
+    padding: 8rem 1rem 1rem;
+  }
+  .textabove {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 1rem;
+    @media screen and (max-width: $mobileResolution) {
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+  .textbelow {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 1rem;
+    @media screen and (max-width: $mobileResolution) {
+      font-size: 12.6px;
+      text-align: center;
+    }
+  }
+  .logo {
+    transform: scale(2.8);
+    @media screen and (max-width: $mobileResolution) {
+      transform: scale(1.9);
+    }
+  }
+  .chain {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    color: $primary;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 31px;
+    @media screen and (max-width: $mobileResolution) {
+      font-size: 22px;
+      padding-top: 1rem;
+
+      padding-bottom: 3rem;
+    }
+    .corporation {
+      color: #fff;
+    }
+  }
+  .inputwrap {
+    width: 100%;
+    max-width: 941px;
+    position: relative;
+    .inputOcc {
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      //   text-align: right;
+      height: 73px;
+      color: $primary;
+      &:hover {
+        background: #a9ff1c;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 4px 34px rgba(169, 255, 28, 0.5);
+        color: #000;
+        // filter: grayscale(100%);
+      }
+      &::placeholder {
+        opacity: 0.6;
+      }
+    }
+    .occ {
+      color: $primary;
+      font-weight: 900;
+      font-size: 16px;
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+  .logowrap {
+    padding-top: 5rem;
+  }
+}

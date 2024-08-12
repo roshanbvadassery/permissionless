@@ -1,0 +1,25 @@
+@import "/styles/variables.scss";
+
+.container {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 1rem;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  padding: 1.5rem 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include devices(mobile) {
+      justify-content: center;
+    }
+  }
+  :global(.page-scrolled) & {
+    opacity: 1;
+  }
+}

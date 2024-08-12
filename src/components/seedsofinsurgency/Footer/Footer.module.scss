@@ -1,0 +1,73 @@
+@import "/styles/variables.scss";
+
+.container {
+  // background-color: rgba(217, 217, 217, 0.08);
+  padding: 6rem 0 3rem 0;
+  @include devices(mobile) {
+    padding: 1rem 0 3rem 0;
+  }
+  .links {
+    display: flex;
+    @include devices(mobile) {
+      justify-content: center;
+    }
+    a {
+      margin-right: 0.8rem;
+      font-size: 0.75rem;
+    }
+  }
+  .row1 {
+    display: unset;
+    padding-bottom: 4rem;
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-align: center;
+      @include devices(mobile) {
+        font-size: 12px;
+      }
+    }
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 9rem;
+    @include devices(mobile) {
+      padding-top: 6rem;
+    }
+    > div {
+      text-align: center;
+    }
+  }
+  .brand {
+    text-align: center;
+    img {
+      width: 12rem;
+    }
+  }
+  .socials {
+    display: flex;
+    justify-content: flex-end;
+    @include devices(mobile) {
+      justify-content: center;
+      margin: 1.4rem 0;
+    }
+    a {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      display: inline-block;
+      transition: transform 0.3s ease-in;
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+  }
+}

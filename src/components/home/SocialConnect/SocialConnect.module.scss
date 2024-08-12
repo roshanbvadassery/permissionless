@@ -1,0 +1,186 @@
+@import "/styles/variables.scss";
+
+@mixin gradientEffect {
+  &::after {
+    opacity: 0.4;
+  }
+  .icon,
+  .name {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  &.Discord {
+    color: #7289da;
+    &::after {
+      background-color: #7289da;
+    }
+  }
+  &.Youtube {
+    color: #ff0000;
+    &::after {
+      background-color: #ff0000;
+    }
+  }
+  &.Instagram {
+    background: linear-gradient(
+      90deg,
+      #405de6 3.49%,
+      #5851db 20.48%,
+      #833ab4 40.79%,
+      #c13584 55.71%,
+      #e1306c 69.81%,
+      #fd1d1d 83.07%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    &:after {
+      background: linear-gradient(
+        90deg,
+        #405de6 3.49%,
+        #5851db 20.48%,
+        #833ab4 40.79%,
+        #c13584 55.71%,
+        #e1306c 69.81%,
+        #fd1d1d 83.07%
+      );
+    }
+  }
+  &.Twitter {
+    color: #1da1f2;
+    &:after {
+      background-color: #1da1f2;
+    }
+  }
+
+  &.Linkedin {
+    color: #0077b5;
+    &:after {
+      background-color: #0077b5;
+    }
+  }
+}
+
+.container {
+  > div {
+    @include devices(mobile) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .headerWrapper {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    background-image: url("/images/layout/bg-lines-2.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    .title {
+      display: block;
+      font-size: 6rem;
+      font-family: $font-heading;
+      text-transform: uppercase;
+      letter-spacing: -0.2rem;
+      font-style: italic;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      @include devices(mobile) {
+        font-size: 22vw;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-left: -1rem;
+      }
+      span {
+        position: relative;
+        display: inline-block;
+        &::before {
+          content: "";
+          position: absolute;
+          top: -7%;
+          width: 43%;
+          height: 106%;
+          height: 100%;
+          background-image: url("/images/layout/paint-brush-2.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+    }
+  }
+  .socialLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include devices(mobile) {
+      margin: 0 auto;
+    }
+    .item {
+      display: inline-flex;
+      text-decoration: none !important;
+      align-items: center;
+      color: #fff;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 10%;
+        height: 73%;
+        width: 74%;
+        filter: blur(25px);
+        opacity: 0;
+        @include devices(mobile) {
+          display: none;
+        }
+      }
+      &:hover {
+        @include gradientEffect();
+      }
+      @include devices(mobile) {
+        @include gradientEffect();
+      }
+      .icon {
+        filter: grayscale(1);
+        opacity: 1;
+        font-size: 0;
+        margin-top: -4%;
+        width: 2.8rem;
+
+        @include devices(mobile) {
+          width: 2rem;
+          margin-right: 1rem;
+        }
+      }
+      .name {
+        font-size: 4rem;
+        font-style: italic;
+        opacity: 0.2;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-family: $font-heading;
+        letter-spacing: -0.2rem;
+        line-height: 1;
+        margin-left: 0.7rem;
+        padding-right: 1rem;
+        @include devices(mobile) {
+          font-size: 2.5rem;
+          margin: 1rem 0;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "/styles/variables.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+  .logo {
+    position: relative;
+    height: 60px;
+    width: 71px;
+  }
+
+  .brandLogo {
+    margin-left: 100px;
+  }
+
+  @media screen and (max-width: $mobileResolution) {
+    padding: 0;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .logo {
+      display: none;
+    }
+    .brandLogo {
+      display: unset;
+      margin-left: 25%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .walletConnect {
+      display: none;
+    }
+  }
+}

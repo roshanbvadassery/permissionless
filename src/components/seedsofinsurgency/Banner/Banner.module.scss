@@ -1,0 +1,120 @@
+@import "/styles/variables.scss";
+
+.container {
+  .smallText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-default;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
+    letter-spacing: -0em;
+    color: #ffffff;
+
+    @media screen and (max-width: $mobileResolution) {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 31px;
+      text-align: center;
+      letter-spacing: -0.07em;
+    }
+  }
+  .headline {
+    font-family: $font-default;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 56px;
+    text-align: center;
+    letter-spacing: -0.07em;
+    color: #a9ff1c;
+    margin: 0;
+
+    @media screen and (max-width: $mobileResolution) {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 44px;
+      text-align: center;
+      letter-spacing: -0.07em;
+
+      color: #a9ff1c;
+    }
+  }
+
+  .problems-headline {
+    font-family: $font-default;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 56px;
+    text-align: center;
+    letter-spacing: -0.07em;
+    color: #a9ff1c;
+    margin: 0;
+
+    @media screen and (max-width: $mobileResolution) {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 44px;
+      text-align: center;
+      letter-spacing: -0.07em;
+
+      color: #a9ff1c;
+    }
+  }
+
+  .imgWrapper {
+    position: relative;
+    width: 867.71px;
+    height: 414.91px;
+    margin: 0 auto;
+    left: 60px;
+
+    @media screen and (max-width: $mobileResolution) {
+      height: 414.9px;
+      width: 689.86px;
+      left: -102px;
+    }
+  }
+  .btn {
+    padding-top: 10px;
+  }
+  .btn p {
+    width: 280px;
+    margin: 0 auto;
+    padding: 22px 38px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #ffffff;
+  }
+
+  .walletConnect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .alreadyWhitelisted {
+    text-align: center;
+  }
+}
+
+.alreadyWhitelisted {
+  background-color: $primary;
+  color: #000;
+  padding: 1rem;
+  margin-top: 2rem;
+}

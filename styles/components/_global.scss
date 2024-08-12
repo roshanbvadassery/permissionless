@@ -1,0 +1,152 @@
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-default;
+  letter-spacing: 0.02em;
+  color: #cac9c9;
+
+  background-color: #000;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+body {
+  &:not(.page-loaded) {
+    overflow: hidden;
+  }
+  &.page-loaded {
+    @media screen and (min-width: 1100px) {
+      * {
+        // cursor: none;
+      }
+    }
+  }
+}
+a {
+  text-decoration: none !important;
+  color: #cac9c9;
+}
+img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+#__next {
+  overflow-x: hidden;
+}
+.page-loaded {
+  #__next {
+    animation: scrollDown 1s 3s ease-in;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    // transform: translateY(-50px);
+
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    @keyframes scrollDown {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-40px);
+      }
+      80% {
+        transform: translateY(-10px);
+      }
+      100% {
+        // transform: translateY(-50px);
+
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.page-loaded {
+  #__next {
+    animation: scrollDown 1s 3s ease-in;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    // transform: translateY(-50px);
+
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    @keyframes scrollDown {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-40px);
+      }
+      80% {
+        transform: translateY(-10px);
+      }
+      100% {
+        // transform: translateY(-50px);
+
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.follow-us-compaign {
+  .ant-modal-content {
+    background-color: #000 !important;
+    box-shadow: 0 0 16px 5px #3c3939;
+    min-height: 100px;
+    color: #fff;
+  }
+  .ant-modal {
+    &-close {
+      &-x {
+        color: #fff;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

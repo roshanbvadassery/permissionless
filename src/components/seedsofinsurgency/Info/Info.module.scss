@@ -1,0 +1,91 @@
+@import "/styles/variables.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7.5rem 14.25rem 1.87rem;
+
+  @media screen and (max-width: $mobileResolution) {
+    display: block;
+    padding: 2.93rem 1.56rem 1.56rem;
+  }
+
+  .left {
+    max-width: 631px;
+    p {
+      margin: 0;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 19px;
+      font-family: $font-default;
+      color: #fff;
+    }
+
+    h1 {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 106px;
+      line-height: 140px;
+      letter-spacing: -0.07em;
+      margin: 10px;
+
+      color: #ffffff;
+      @media screen and (max-width: $mobileResolution) {
+        font-weight: 400;
+        font-size: 70px;
+        line-height: 104px;
+        /* identical to box height */
+
+        letter-spacing: -0.07em;
+      }
+
+      @media screen and (max-width: 360px) {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 66px;
+        line-height: 140px;
+        letter-spacing: -0.07em;
+        margin: 10px;
+      }
+    }
+  }
+
+  .right {
+    padding-right: 50px;
+    padding-left: 10px;
+
+    @media screen and (max-width: $mobileResolution) {
+      padding-top: 10px;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .rightText {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding-bottom: 14px;
+
+      @media screen and (max-width: $mobileResolution) {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      @media screen and (max-width: 360px) {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

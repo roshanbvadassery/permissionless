@@ -1,0 +1,18 @@
+.p-btn {
+  background-color: $primary;
+  font-weight: 500;
+  padding: 11px 55px;
+  display: inline-block;
+  color: #000;
+  font-size: 0.9rem;
+  &-bordered {
+    background-color: $primary;
+    border: 1px solid #000;
+    color: #000;
+    transition: background-color 0.2s ease;
+    &:hover {
+      background-color: #000;
+      color: $primary;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "/styles/variables.scss";
+
+.container {
+  background-color: rgba(217, 217, 217, 0.08);
+  padding: 12rem 0 3rem 0;
+  margin-top: 5rem;
+  @include devices(mobile) {
+    padding: 4rem 0 3rem 0;
+  }
+  .links {
+    display: flex;
+    @include devices(mobile) {
+      justify-content: center;
+    }
+    a {
+      margin-right: 0.8rem;
+      font-size: 0.75rem;
+    }
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > div {
+      text-align: center;
+    }
+  }
+  .brand {
+    text-align: center;
+    img {
+      width: 12rem;
+    }
+  }
+  .socials {
+    display: flex;
+    justify-content: flex-end;
+    @include devices(mobile) {
+      justify-content: center;
+      margin: 1.4rem 0;
+    }
+    a {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      display: inline-block;
+      transition: transform 0.3s ease-in;
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+  }
+}

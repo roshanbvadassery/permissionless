@@ -1,0 +1,330 @@
+@import "/styles/variables.scss";
+
+.container {
+  text-align: center;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  // background-image: url("/images/layout/spaceshipoverlay.png");
+  background-size: cover;
+  background-position: center;
+  // mix-blend-mode: difference;
+  // opacity: 0.4;
+  // background-size: 100%;
+  // position: relative;
+  transition: transform 1.1s 0.3s cubic-bezier(0.12, 1.12, 0.8, 0.81);
+  @include devices(mobile) {
+    // height: 100%;
+  }
+  &.loaded {
+    transform: translateY(-110%);
+  }
+  .video {
+    position: fixed; /* Sit on top of the page content */
+    opacity: 0.2;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    @include devices(mobile) {
+      height: 33.33vh;
+    }
+  }
+  .mobvid {
+    display: none;
+    @include devices(mobile) {
+      display: block;
+      position: fixed; /* Sit on top of the page content */
+      opacity: 0.2;
+      background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+      height: 33.33vh;
+    }
+  }
+  .top {
+    position: absolute;
+    top: 0;
+  }
+  .bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .defaultScreen {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s cubic-bezier(0.12, 1.12, 0.8, 0.81);
+    opacity: 0;
+    transform: scale(1.1);
+    &.loaded {
+      // opacity: 0;
+      pointer-events: none;
+      .bgText {
+        opacity: 0;
+        transform: translateX(-20%);
+      }
+      .startAction {
+        // opacity: 0;
+        // transform: translateX(50%);
+        background: #000000;
+      }
+    }
+    .bgText {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      margin: auto;
+      z-index: -1;
+
+      letter-spacing: 0.2em;
+      transition: transform 0.4s cubic-bezier(0.69, 0.54, 0.55, 1.01),
+        opacity 0.4s cubic-bezier(0.69, 0.54, 0.55, 1.01);
+      &.mobile {
+        background-image: url("/images/layout/please-dont-mobile.svg");
+        background-repeat: repeat-y;
+        background-size: 100%;
+      }
+      @include devices(ipad) {
+        height: unset;
+        width: 100%;
+      }
+    }
+    .startAction {
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 15px 55px;
+      letter-spacing: 3px;
+      color: #a9ff1c;
+      background: #000000;
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.69, 0.54, 0.55, 1.01),
+        opacity 0.2s cubic-bezier(0.69, 0.54, 0.55, 1.01),
+        background-color 0.7s ease;
+
+      position: relative;
+      @include devices(mobile) {
+        padding: 15px 30px;
+      }
+      // &::before {
+      //   content: "";
+      //   background: linear-gradient(
+      //     45deg,
+      //     #a9ff1c,
+      //     #fffb00,
+      //     #48ff00,
+      //     #a9ff1c,
+      //     #a9ff1c,
+      //     #a9ff1c
+      //   );
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   background-size: 400%;
+      //   z-index: -1;
+      //   // filter: blur(2px);
+      //   width: calc(100%);
+      //   height: calc(100%);
+      //   animation: glowing 20s linear infinite;
+      //   opacity: 0;
+      //   transition: opacity 0.3s ease-in-out;
+      //   // border-radius: 10px;
+      // }
+
+      // &:hover {
+      //   background-color: transparent;
+      //   color: #000;
+      //   &::before {
+      //     opacity: 1;
+      //   }
+      //   span {
+      //     text-decoration: line-through;
+      //   }
+      // }
+    }
+    .podcast {
+      color: #a9ff1c;
+      padding: 1rem;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      /* identical to box height */
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+      // z-index: 10000;
+      @include devices(mobile) {
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .text {
+        &.loaded {
+          display: none;
+        }
+      }
+    }
+    .podcast:hover {
+      color: #000;
+      background: #a9ff1c;
+      cursor: pointer;
+      @include devices(mobile) {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+        color: #a9ff1c;
+      }
+    }
+  }
+  .loadingScreen {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    &.loaded {
+      display: flex;
+    }
+    .progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: $primary;
+      transition: transform 2s linear;
+      transform: translateX(-102%);
+      &.loaded {
+        transform: translateX(0);
+      }
+    }
+
+    .progressPercent {
+      position: absolute;
+      right: 0.5rem;
+      bottom: 0.5rem;
+      font-family: $font-heading;
+      color: #fff;
+      font-size: 4rem;
+      line-height: 1;
+      mix-blend-mode: exclusion;
+      z-index: 5;
+      font-weight: 700;
+
+      @include devices(mobile) {
+        left: 0;
+        right: 0;
+        font-size: 5rem;
+      }
+    }
+    .intro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      z-index: 3;
+      mix-blend-mode: exclusion;
+      @include devices(mobile) {
+        flex-direction: column;
+      }
+      .message {
+        display: inline-block;
+        span {
+          display: inline-block;
+          min-width: 4px;
+        }
+      }
+
+      .logo {
+        color: $primary;
+        @include devices(mobile) {
+          margin-top: 1rem;
+        }
+
+        path {
+          stroke-dasharray: 500;
+          stroke-dashoffset: 100;
+        }
+      }
+    }
+  }
+  .podcast {
+    color: #a9ff1c;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    // z-index: 10000;
+    @include devices(mobile) {
+      font-size: 17px;
+      font-weight: 500;
+      padding-left: 2px;
+    }
+  }
+  .podcast:hover {
+    color: #000;
+    background: #a9ff1c;
+    cursor: pointer;
+    @include devices(mobile) {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+      color: #a9ff1c;
+    }
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.spaceShipRocket {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 2rem;
+  img {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,92 @@
+@import "/styles/variables.scss";
+
+.container {
+  background-color: $primary;
+  position: relative;
+  z-index: 0;
+  padding: 8rem 0;
+  margin-top: 10rem;
+  @include devices(mobile) {
+    margin-top: 6rem;
+    padding: 20rem 0 4rem 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/layout/bg-line-3.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 55%;
+    transform: translateX(10%);
+    z-index: -1;
+    @include devices(mobile) {
+      background-position: 24% 19%;
+      background-size: 155%;
+      transform: translateX(0);
+    }
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include devices(mobile) {
+      flex-direction: column;
+    }
+  }
+  .title {
+    font-size: 2.875rem;
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    color: #000;
+    @include devices(mobile) {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+  }
+  .thumbnailWrapper {
+    position: absolute;
+    left: 5rem;
+    right: 0;
+    margin: 0 auto;
+    max-width: 400px;
+    top: -7rem;
+    z-index: 0;
+    &::after {
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 16rem;
+      height: 16rem;
+      background: #000000;
+      filter: blur(154px);
+      border-radius: 40px;
+      z-index: -1;
+    }
+
+    @include devices(mobile) {
+      left: 0;
+    }
+  }
+  .action {
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 0.9rem 4.5rem;
+    // background-color: $primary;
+  }
+}

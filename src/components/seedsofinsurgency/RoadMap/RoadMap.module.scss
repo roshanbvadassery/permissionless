@@ -1,0 +1,15 @@
+@import "/styles/variables.scss";
+
+.container {
+  background: url(/images/layout/roadMap.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  // margin: 0 auto;
+  height: 1235px;
+
+  @media screen and (max-width: $mobileResolution) {
+    background: url(/images/layout/roadMapMob.png) no-repeat;
+    background-size: cover;
+    height: 1600px;
+  }
+}

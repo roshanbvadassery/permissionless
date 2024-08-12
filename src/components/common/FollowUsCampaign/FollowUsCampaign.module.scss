@@ -1,0 +1,26 @@
+@import "/styles/variables.scss";
+
+.action {
+  background-color: transparent;
+  color: #a9ff1c;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: inline-flex;
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: #000;
+  }
+}
+
+.connectWallet {
+  display: flex;
+  justify-content: center;
+}
+
+.alreadyWhitelisted {
+  text-align: center;
+}

@@ -1,0 +1,99 @@
+@import "/styles/variables.scss";
+
+.container {
+  // background-attachment: fixed !important;
+  height: 100vh;
+  min-height: 600px;
+  background-image: url("/images/layout/hero-banner.jpg");
+  background-size: cover;
+  background-position: center 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  @include devices(mobile) {
+    background-size: auto 72%;
+    background-position: top center;
+    background-color: #000;
+  }
+  .items {
+    margin-top: 4rem;
+    text-align: center;
+    .item {
+      overflow: hidden;
+      .imageWrapper {
+        transform: translateY(120%);
+        transition: transform 0.4s cubic-bezier(0.18, 0.82, 0.54, 0.87);
+        @include devices(mobile) {
+          padding: 0 0.5rem;
+        }
+        :global(.page-loaded) & {
+          transform: translateY(0);
+        }
+        &.heading1 {
+          width: 250px;
+          margin: 0 auto;
+          max-width: 400px;
+          @include devices(mobile) {
+            width: 87%;
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        .imageWrapper {
+          transition-delay: 0.05s;
+        }
+      }
+    }
+  }
+  .logo {
+    transform: scale(2.8);
+    opacity: 0;
+    margin-top: 1rem;
+    filter: drop-shadow(5px 5px 5px #222);
+    transition: transform 0.4s cubic-bezier(0.18, 0.82, 0.54, 0.87),
+      opacity 0.4s cubic-bezier(0.18, 0.82, 0.54, 0.87);
+    transition-delay: 0.4s;
+    @include devices(mobile) {
+      margin-top: 0;
+    }
+
+    :global(.page-loaded) & {
+      transform: scale(2.5);
+      opacity: 1;
+      @include devices(mobile) {
+        transform: scale(1.8);
+      }
+      @media screen and (max-width: 300px) {
+        transform: scale(1.5);
+      }
+    }
+  }
+  .paintDrop {
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    transition-delay: 1s;
+    opacity: 0;
+    transform: scale(0.95);
+    overflow: hidden;
+    margin-top: 2.5em;
+    :global(.page-loaded) & {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .drop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(-45%);
+
+      transition: transform 1.7s 1.3s cubic-bezier(0, 1.03, 0.73, 0.96);
+      :global(.page-loaded) & {
+        transform: translateY(0);
+      }
+    }
+  }
+}
